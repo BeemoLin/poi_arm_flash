@@ -88,10 +88,11 @@ resolveResponses = ->
         # Game datas prefixed by $
         when '/kcsapi/api_start2'
 
-	  dir_path = window.ROOT + 'cache'
-	  fs.mkdirs(dir_path)
-	  if body?
-	    fs.outputFile(dir_path + '/START2.json', JSON.stringify body)
+          #BeemoLin
+          dir_path = window.ROOT + 'cache'
+          fs.mkdirs(dir_path)
+          if body?
+            fs.outputFile(dir_path + '/START2.json', JSON.stringify body)
 
           start2Version += 1
           window.$ships = []
@@ -153,10 +154,11 @@ resolveResponses = ->
           _slotitems[item.api_id] = extendSlotitem item for item in body
         when '/kcsapi/api_port/port'
 
-	  dir_path = window.ROOT + '/cache'
-	  fs.mkdirs(dir_path)
-	  if body?
-	    fs.outputFile(dir_path + '/PORT.json', JSON.stringify body)
+          #BeemoLin
+          dir_path = window.ROOT + '/cache'
+          fs.mkdirs(dir_path)
+          if body?
+            fs.outputFile(dir_path + '/PORT.json', JSON.stringify body)
 
           window._ships = {}
           _ships[ship.api_id] = extendShip ship for ship in body.api_ship
